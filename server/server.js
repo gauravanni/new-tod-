@@ -6,6 +6,7 @@ var bodyParser=require('body-parser');
 var mongoose=require('./db/mongoose.js');
 var Todo=require('./models/todo.js');
 var User=require('./models/user.js');
+var Item=require('./models/item.js');
 
 var app=express();
 
@@ -38,6 +39,15 @@ app.get('/todos',(req,res)=>{
 
 app.get('/',(req,res)=>{
 	res.send("Hello World");
+});
+app.get('/items',(req,res)=>{
+	Item.find().then((items)=>{
+		res.send({
+			item:items
+		});
+	},(err)=>{
+		res.status(400).send(err);
+	});
 });
 
 
