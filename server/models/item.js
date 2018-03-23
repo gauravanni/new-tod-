@@ -13,4 +13,4 @@ var ItemSchema= new Schema({
   }
 });
 
-module.exports=mongoose.model('Item',UserSchema);
+module.exports=mongoose.model('Item',ItemSchema);
