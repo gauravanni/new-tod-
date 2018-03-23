@@ -36,6 +36,11 @@ app.get('/todos',(req,res)=>{
 	});
 });
 
+app.get('/',(req,res)=>{
+	res.send("Hello World");
+});
+
+
 // get Todos by id
 app.get('/todos/:id',(req,res)=>{
 	const todoId=req.params.id;
